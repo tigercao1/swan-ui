@@ -177,7 +177,7 @@ Overview
         }
     ]
 
-## **Publications**
+### **Publications**
 
 Publications affiliated with the lab.
 
