@@ -1,6 +1,267 @@
-# Getting Started with Create React App
+# Swan UI
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Maintainability
+
+Almost all of the content of the page can be managed after deployment by modifying the `.json` files in the public repository.
+
+### **Page Data**
+
+Modifiable lab summary and research interest. Also latest lab news.
+
+**Usage**
+
+- To modify the summary and research interest, simply update the fields text under `/public/pageData/homePageData.json`.
+
+- To update the news, insert a news object at the beginning of the `news` array under `/public/pageData/homePageData.json`.
+
+- Commit your changes and submit a pull request
+
+**Directories**
+
+    /public/pageData/homePageData.json
+
+**Fields**
+
+    summary: String (required)
+    researchInterest: String (required)
+    news: Array of news objects (required)
+        date: String (required)
+        text: String (news content, required)
+
+**Example**
+
+    {
+        "summary": "Some summary",
+        "researchInterest": "Our research interest ...",
+        "news": [
+            {
+                "date": "April 2, 2021",
+                "text": "Good news!"
+            },
+            ...
+        ]
+    }
+
+### **People**
+
+Faculty members, current graduate students, undergraduate students and alumnis of the lab.
+
+**Usage**
+
+1. Upload the photos to `/public/peopleData/photos`.
+
+2. Append information following the structure shown below to `index.json` file.
+
+3. Commit your changes and submit a pull request.
+
+**Diretories**
+
+    /public/peopleData/index.json
+    /public/peopleData/photos/
+
+**Fields**
+
+    Faculty: Object
+        name: String (required)
+        role: String (required)
+        school: String (required)
+        imgUrl: String (file path, optional)
+        links: Array of link objects (optional)
+
+    currentGraduate: Object
+        name: String (required)
+        program: String (required)
+        school: String (required)
+        imgUrl: String(file path, optional)
+        links: Array of link objects (optional)
+
+    currentUndergraduate: Object
+        name: String (required)
+        program: String (required)
+        school: String (required)
+        imgUrl: String(file path, optional)
+        links: Array of link objects (optional)
+
+    alumni: Object
+        name: String (required)
+        program: String (required)
+        position: String (position & company, required)
+        imgUrl: String(file path, optional)
+        links: Array of link objects (optional)
+
+        links: Array of link objects
+            type: enum (linkedin, github, website, email) (required)
+            link: String (link/email address) (required)
+
+**Example**
+
+Single Object to append
+
+    {
+        "name": "John Appleseed",
+        "program": "Master of Science, 1998-2000",
+        "school": "Some University",
+        "imgUrl": "/peopleData/photos/johnAppleseed.png",
+        "links": [
+            {
+                "type": "email",
+                "link": "johnappleseed@mail.com"
+            }
+        ]
+    }
+
+Overview
+
+    "faculty": [
+        ...,
+        {
+            "name": "Olga Baysal",
+            "role": "Associate Professor, Graduate Director",
+            "school": "Carleton University",
+            "imgUrl": "/peopleData/photos/olgabaysal.png",
+            "links": [
+                {
+                    "type": "website",
+                    "link": "http://olgabaysal.com"
+                },
+                {
+                    "type": "email",
+                    "link": "olga.baysal@carleton.ca"
+                }
+            ]
+        }
+    ],
+    "currentGraduate": [
+        ...,
+        {
+            "name": "Lance Wang",
+            "program": "MCS-thesis Data Science, 2019-2021",
+            "school": "Carleton University",
+            "imgUrl": "/peopleData/photos/LanceWang.jpg",
+            "links": [
+                {
+                    "type":"website",
+                    "link":"https://lancewg.com/"
+                }
+            ]
+        }
+    ],
+    "currentUndergraduate": [
+        ...,
+        {
+            "name": "Yizhang Cao",
+            "program": "UG-project, Winter 2021",
+            "school": "Carleton University",
+            "imgUrl": "/peopleData/photos/yizhangcao.jpg",
+            "links": [
+                {
+                    "type": "github",
+                    "link": "https://github.com/tigercao1"
+                },
+                {
+                    "type": "linkedin",
+                    "link": "https://www.linkedin.com/yizhang-tiger-cao"
+                }
+            ]
+        }
+    ],
+    "alumni": [
+        ...,
+        {
+            "name": "Davoud Saljoughi",
+            "program": "MCS-thesis, 2020-2021",
+            "position": "Analyst/Data Specialist, Health Canada",
+            "links": []
+        }
+    ]
+
+## **Publications**
+
+Publications affiliated with the lab.
+
+**Usage**
+
+1. Upload the publication to `/public/publications/<folder>/`.
+
+2. Append information following the structure shown below to `index.json` file.
+
+3. Commit your changes and submit a pull request.
+
+**Directories**
+
+    /public/publications/index.json
+    /public/publications/pdfs/
+    /public/publications/slides/
+    /public/publications/<folder>/
+
+`<folder>` can be any common types of the file groups for publications. pdfs and slides can be uploaded directly to existing folders.
+
+**Fields**
+
+    title: String (optional)
+    authors: String (optional)
+    conference: String (optional)
+    summary: String (optional)
+    imageUrl: String (optional)
+    links: Array of link objects (optional)
+        type: String (type of document, required)
+        link: String (file path/url, required)
+
+**Example**
+
+Single Object to append
+
+    {
+        "title": "Some title",
+        "authors": "John Appleseed and Sam the Brilliant",
+        "conference": "In Proc. of the International conference on Mining Software Repositories (MSR), Madrid, Spain, May 17-19, 2021",
+        "summary": "Some Summary",
+        "imageUrl": "/publications/images/image.png",
+        "links": [
+            {
+                "type": "pdf",
+                "link": "/publications/pdfs/this_publication.pdf"
+            },
+            {
+                "type": "slides",
+                "link": "/publications/pdfs/this_slides.pptx"
+            },
+            {
+                "type": "recording",
+                "link": "https://youtube.com/some-video"
+            }
+        ]
+    }
+
+Overview
+
+    [
+        {
+            "title": "Studying the Change Histories of Stack Overflow and GitHub Snippets",
+            "authors": "Saraj Singh Manes and Olga Baysal",
+            "conference": "In Proc. of the International conference on Mining Software Repositories (MSR), Madrid, Spain, May 17-19, 2021",
+            "summary": "Some Summary",
+            "imageUrl": "/publications/images/image.png",
+            "links": [
+                {
+                    "type": "pdf",
+                    "link": "/publications/pdfs/this_publication.pdf"
+                },
+                {
+                    "type": "slides",
+                    "link": "/publications/pdfs/this_slides.pptx"
+                },
+                {
+                    "type": "recording",
+                    "link": "https://youtube.com/some-video"
+                }
+            ]
+        },
+        ...
+    ]
+
 
 ## Available Scripts
 
@@ -14,57 +275,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm build`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Builds the repository into deployble static website. Deployble files can be found under the `build` folder after running `npm build`
 
-### `npm run build`
+To deploy directly under a GitHub pages domain (e.g. `username.github.io`). Copy the files into a separate repository named `<github-username>.github.io` under your account.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Or you can deploy under the same repository using [gh-pages](https://pages.github.com/). The page would be deployed under `username.github.io/swan-ui`

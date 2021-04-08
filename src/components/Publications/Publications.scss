@@ -1,0 +1,14 @@
+.publications {
+    background-color: #EBF2FA;
+    min-height: 100vh;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 20px 20% 0 20%;
+    }
+}

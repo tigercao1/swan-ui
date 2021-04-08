@@ -1,0 +1,42 @@
+.contact {
+    background-color: #EBF2FA;
+    padding-top: 80px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .background-img {
+        height: calc(50vh - 80px);
+        background: url(../../assets/images/lounge.JPG);
+        background-attachment: fixed;
+        background-position: top;
+        background-size: cover;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        height: calc(50vh - 80px);
+        align-items: flex-start;
+        justify-content: center;
+        overflow: scroll;
+        color: #4383CD;
+
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+            
+        }
+
+        p {
+            border-top: 1px solid #4383CD;
+            box-sizing: border-box;
+            padding-top: 20px;
+            margin-top: 10px;
+            padding-right: 20px;
+            border-radius: 1px;
+            font-size: 16px;
+        }
+    }
+}

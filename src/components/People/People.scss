@@ -1,0 +1,101 @@
+.people {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 80px;
+    background-color: #EBF2FA;
+    min-height: 100vh;
+
+    .title {
+        font-size: 25px;
+        font-weight: 500;
+        color: #3D77BA;
+        margin: 20px 20px 20px 20%;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        align-items: start;
+
+        .container {
+            box-sizing: border-box;
+            padding: 0 10px 20px 10px;
+
+            .text {
+                color: #4383CD;
+                margin: 5px;
+            }
+
+            .name {
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+            .school {
+                color: #3D77BA;
+                opacity: 0.7;
+                font-style: italic;
+            }
+        }
+    }
+
+    .img {
+        min-height: 100px;
+        min-width: 100px;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        position: relative;
+        aspect-ratio: 1 / 1;
+
+        .links {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: none;
+        }
+        &:hover {
+            .links {
+                display: grid;
+                gap: 10px;
+                justify-content: space-evenly;
+                justify-items: center;
+                align-content: center;
+                align-items: center;
+                color: black;
+                background-blend-mode: lighten;
+                background-color: rgba(235, 242, 250, 0.8);
+                .logo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: transparent;
+                    box-sizing: border-box;
+                    padding: 5px 20px 5px 20px;
+                    border: 2px solid #4A90E2;
+                    font-size: 20px;
+                    color: #4A90E2;
+            
+                    &:hover {
+                        box-shadow: inset 0 0 5px #4A90E2;
+                        cursor: pointer;
+                    }
+            
+                    &:active {
+                        box-shadow: inset 0 0 10px #4A90E2;
+                    }
+            
+                    &:focus {
+                        outline: none;
+                    }
+                    a {
+                        color: #4A90E2;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20% 0px 20%;
+}
+
+.route-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: white;
+    background-color: #4A90E2;
+    box-sizing: border-box;
+    padding: 15px 20px 15px calc(20% - 20px);
+}
+
+p {
+    color: #4383CD;
+    font-size: 20px;
+}
