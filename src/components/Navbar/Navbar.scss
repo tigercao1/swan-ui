@@ -11,10 +11,13 @@
     z-index: 5;
     background: white;
 
-    .logo {
+    a {
+        height: 100%;
+        text-decoration: none;
         display: flex;
         flex-direction: row;
         align-items: center;
+        color: #3D77BA;
         img {
             margin: 0 10px 0 20px;
             max-height: 52px;
@@ -27,6 +30,7 @@
             }
         }
     }
+    
 
     .nav-links {
         display: flex;

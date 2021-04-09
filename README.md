@@ -1,10 +1,30 @@
 # Swan UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Running on [swan-carleton.github.io](swan-carleton.github.io).
 
 ## Maintainability
 
 Almost all of the content of the page can be managed after deployment by modifying the `.json` files in the public repository.
+
+### **Steps to modify the data mentioned below**
+
+1. Clone the repository
+
+        git clone https://github.com/swan-carleton/swan-carleton.github.io.git
+
+2. Create a new branch for your changes
+
+        git checkout -b <branch-name>
+
+2. Modify the data you desire following the file structures and instructions below
+
+3. Commit and push your changes. E.g.
+
+        git commit -m "<your message>"
+
+        git push -u origin <branch-name>
+
+5. Submit a pull request your changes to be reviewed and merged.
 
 ### **Page Data**
 
@@ -12,15 +32,15 @@ Modifiable lab summary and research interest. Also latest lab news.
 
 **Usage**
 
-- To modify the summary and research interest, simply update the fields text under `/public/pageData/homePageData.json`.
+- To modify the summary and research interest, simply update the fields text under `/pageData/homePageData.json`.
 
-- To update the news, insert a news object at the beginning of the `news` array under `/public/pageData/homePageData.json`.
+- To update the news, insert a news object at the beginning of the `news` array under `/pageData/homePageData.json`.
 
 - Commit your changes and submit a pull request
 
 **Directories**
 
-    /public/pageData/homePageData.json
+    /pageData/homePageData.json
 
 **Fields**
 
@@ -50,7 +70,7 @@ Faculty members, current graduate students, undergraduate students and alumnis o
 
 **Usage**
 
-1. Upload the photos to `/public/peopleData/photos`.
+1. Upload the photos to `/peopleData/photos`.
 
 2. Append information following the structure shown below to `index.json` file.
 
@@ -58,8 +78,8 @@ Faculty members, current graduate students, undergraduate students and alumnis o
 
 **Diretories**
 
-    /public/peopleData/index.json
-    /public/peopleData/photos/
+    /peopleData/index.json
+    /peopleData/photos/
 
 **Fields**
 
@@ -183,18 +203,20 @@ Publications affiliated with the lab.
 
 **Usage**
 
-1. Upload the publication to `/public/publications/<folder>/`.
+1. Upload the publication to `/publicationData/<folder>/`.
 
-2. Append information following the structure shown below to `index.json` file.
+2. Upload a cover picture to `/publicationData/images/`.
 
-3. Commit your changes and submit a pull request.
+3. Append information following the structure shown below to `index.json` file.
+
+4. Commit your changes and submit a pull request.
 
 **Directories**
 
-    /public/publications/index.json
-    /public/publications/pdfs/
-    /public/publications/slides/
-    /public/publications/<folder>/
+    /publicationData/index.json
+    /publicationData/pdfs/
+    /publicationData/slides/
+    /publicationData/<folder>/
 
 `<folder>` can be any common types of the file groups for publications. pdfs and slides can be uploaded directly to existing folders.
 
@@ -218,15 +240,15 @@ Single Object to append
         "authors": "John Appleseed and Sam the Brilliant",
         "conference": "In Proc. of the International conference on Mining Software Repositories (MSR), Madrid, Spain, May 17-19, 2021",
         "summary": "Some Summary",
-        "imageUrl": "/publications/images/image.png",
+        "imageUrl": "/publicationData/images/image.png",
         "links": [
             {
                 "type": "pdf",
-                "link": "/publications/pdfs/this_publication.pdf"
+                "link": "/publicationData/pdfs/this_publication.pdf"
             },
             {
                 "type": "slides",
-                "link": "/publications/pdfs/this_slides.pptx"
+                "link": "/publicationData/pdfs/this_slides.pptx"
             },
             {
                 "type": "recording",
@@ -243,15 +265,15 @@ Overview
             "authors": "Saraj Singh Manes and Olga Baysal",
             "conference": "In Proc. of the International conference on Mining Software Repositories (MSR), Madrid, Spain, May 17-19, 2021",
             "summary": "Some Summary",
-            "imageUrl": "/publications/images/image.png",
+            "imageUrl": "/publicationData/images/image.png",
             "links": [
                 {
                     "type": "pdf",
-                    "link": "/publications/pdfs/this_publication.pdf"
+                    "link": "/publicationData/pdfs/this_publication.pdf"
                 },
                 {
                     "type": "slides",
-                    "link": "/publications/pdfs/this_slides.pptx"
+                    "link": "/publicationData/pdfs/this_slides.pptx"
                 },
                 {
                     "type": "recording",
@@ -261,7 +283,6 @@ Overview
         },
         ...
     ]
-
 
 ## Available Scripts
 

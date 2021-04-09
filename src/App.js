@@ -60,7 +60,7 @@ function App() {
             }
         })
 
-        fetch(process.env.PUBLIC_URL + '/publications/index.json').then((response) => {
+        fetch(process.env.PUBLIC_URL + '/publicationData/index.json').then((response) => {
             return response.json();
         }).then((publications) => {
             console.log(publications);

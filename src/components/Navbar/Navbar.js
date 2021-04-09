@@ -14,10 +14,10 @@ const Navbar = () => {
 
     return (
         <div className="navbar">
-            <div className="logo">
+            <NavLink to="/">
                 <img src={logo} alt="logo"/>
                 <div className="logo-text"><span>SWAN</span> Research Lab</div>
-            </div>
+            </NavLink>
             <div className="nav-links">
                 {
                     navLinks.map((text, idx) => {
