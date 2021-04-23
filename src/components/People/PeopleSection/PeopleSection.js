@@ -21,7 +21,7 @@ const PeopleSection = ({ title, data }) => {
                     return (
                         <div key={idx} className="container">
                             <div className="img" style={{backgroundImage:`url(${ member.imgUrl ? (process.env.PUBLIC_URL + member.imgUrl) : PlaceHolder })`}}>
-                                <div className="links">
+                                { member.links && member.links.length > 0 && <div className="links">
                                     {
                                         member.links ? 
                                             member.links.map((link, idx) => {
@@ -35,7 +35,7 @@ const PeopleSection = ({ title, data }) => {
                                             }) :
                                             ""
                                     }
-                                </div>
+                                </div> }
                             </div>
                             <div className="name text">{member.name}</div>
                             <div className="role text">{member.role ? member.role : member.program}</div>
