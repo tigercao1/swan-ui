@@ -1,6 +1,6 @@
 # Swan UI
 
-Running on [swan-carleton.github.io](swan-carleton.github.io).
+Running on [swan-carleton.github.io](https://swan-carleton.github.io).
 
 ## Maintainability
 
